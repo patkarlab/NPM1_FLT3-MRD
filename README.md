@@ -4,13 +4,13 @@ This nextflow pipeline contains 2 workflows
 - NPM1_MRD - Detection of NPM1 mutations in MRD samples.
 
 <p align="center">
-<img src="./assets/NPM1_MRD_Pipeline_DAG.png" width="800">
+<img src="./assets/NPM1_MRD_Pipeline_DAG.png" height="700">
 </p>
 
 - FLT3_MRD - Detection of FLT3 mutations in MRD samples.
 
 <p align="center">
-<img src="./assets/FLT3_MRD_Pipeline_DAG.png" width="800">
+<img src="./assets/FLT3_MRD_Pipeline_DAG.png" height="700">
 </p>
 
 ### Tools
