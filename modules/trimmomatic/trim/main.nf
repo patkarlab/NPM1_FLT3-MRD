@@ -1,0 +1,21 @@
+process TRIM { 
+	tag "${Sample}"
+	label 'process_medium'
+	input:
+		tuple val(Sample), file(read1), file(read2)
+		file (illumina_adapters)
+		file (nextera_adapters)
+	output:
+		tuple val (Sample), file("*1P.fq.gz"), file("*2P.fq.gz")
+	script:
+	"""	
+	trimmomatic PE \
+	${read1} ${read2} \
+	-threads ${task.cpus} \
+	-baseout ${Sample}.fq.gz \
+	ILLUMINACLIP:${illumina_adapters}:2:30:10:2:keepBothReads \
+	ILLUMINACLIP:${nextera_adapters}:2:30:10:2:keepBothReads \
+	LEADING:3 SLIDINGWINDOW:4:15 MINLEN:40	
+	sleep 5s
+	"""
+}
