@@ -6,7 +6,7 @@ process FLT3_ITD_EXT {
 	input:
 		tuple val (Sample), file(trim1), file(trim2)
 	output:
-		tuple val (Sample), file("${Sample}_1P.fq_FLT3_ITD.vcf")
+		tuple val (Sample), file("${Sample}*.vcf")
 	script:
 	"""
 	perl /biosoft/FLT3_ITD_ext/FLT3_ITD_ext.pl -a 0 -f1 ${trim1} -f2 ${trim2} -o ./ -g hg19 -n amplicon
